@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Texto Arco-Íris</title>
+  <style>
+    /* Estilo do texto com efeito arco-íris */
+    #textoArcoIris {
+      font-size: 3em;
+      font-weight: bold;
+      text-align: center;
+      transition: color 0.3s; /* Animação suave de cor */
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text; /* Apenas para o texto */
+      color: transparent;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Passe o mouse sobre o texto para mudar a cor!</h2>
+
+<!-- Texto com efeito arco-íris -->
+<div 
+  id="textoArcoIris" 
+  onmouseover="mudarCor()" 
+  onmouseout="resetarCor()">
+  Arco-Íris
+</div>
+
+<script>
+  // Lista de cores do arco-íris
+  const coresArcoIris = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+d
+  function mudarCor() {
+    const texto = document.getElementById('textoArcoIris');
+    // Gera uma cor aleatória da lista do arco-íris
+    const corAleatoria = coresArcoIris[Math.floor(Math.random() * coresArcoIris.length)];
+    texto.style.color = corAleatoria;
+  }
+
+  function resetarCor() {
+    const texto = document.getElementById('textoArcoIris');
+    texto.style.color = 'transparent'; // Retorna ao efeito arco-íris original
+  }
+</script>
+
+</body>
+</html>
